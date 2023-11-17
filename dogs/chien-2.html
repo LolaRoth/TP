@@ -1,11 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" x-data="{menuIsOpen: false}" :class="{noscroll:menuIsOpen}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page du deuxième chien</title>
+    <script defer src="https://unpkg.com/alpinejs"></script>
 </head>
 <body>
+    <header>
+        <nav>
+           
+            <button
+            aria-controls="mainNav"
+            @click="menuIsOpen = ! menuIsOpen"
+            class="header_menuBtn"
+          >
+            menu
+          </button>
+          <nav
+            id="mainNav"
+            x-show="menuIsOpen"
+            x-transition.duration.800ms
+            class="menu"
+          >
+            <ul>
+              <li><a href="../cats/index.html">Les chats</a></li>
+              <ul>
+              <li><a href="../cats/chat-1.html">Premier chat</a></li>
+              <li><a href="../cats/chat-2.html">Deuxième chat</a></li>
+              </ul>
+              <li><a href="/dogs/index.html">Les chiens</a></li>
+              <ul>
+              <li><a href="/dogs/chien-1.html">Premier chien</a></li>
+              <li><a href="/dogs/chien-2.html">Le spitz</a></li>
+              </ul>
+            </ul>
+          </nav>
+    </header>
     <h1>Page du deuxième chien</h1>
     <a href="../index.html">Accueil du site</a>
 </body>
