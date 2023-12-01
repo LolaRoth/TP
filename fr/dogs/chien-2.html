@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" x-data="{menuIsOpen: false}" :class="{noscroll:menuIsOpen}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les cavaliers king Charles</title>
+    <script defer src="https://unpkg.com/alpinejs"></script>
+</head>
+<body>
+    <header>
+        <a href="../index.html">Accueil du site</a>
+        <nav>
+           
+            <button
+            aria-controls="mainNav"
+            @click="menuIsOpen = ! menuIsOpen"
+            class="header_menuBtn"
+          >
+            menu
+          </button>
+          <nav
+            id="mainNav"
+            x-show="menuIsOpen"
+            x-transition.duration.800ms
+            class="menu"
+          >
+            <ul>
+              <li><img src="/public/icones/SolarCatBroken.svg" alt="logo de chat"><a href="../cats/index.html">Les chats</a></li>
+              <ul>
+              <li><a href="../cats/chat-1.html">Premier chat</a></li>
+              <li><a href="../cats/chat-2.html">Deuxième chat</a></li>
+              </ul>
+              <li><img src="/public/icones/FluentAnimalDog16Regular.svg" alt="logo de chien"><a href="/dogs/index.html">Les chiens</a></li>
+              <ul>
+              <li><a href="/dogs/chien-1.html">Le spitz</a></li>
+              <li><a href="/dogs/chien-2.html">Les cavaliers king charles</a></li>
+              </ul>
+            </ul>
+          </nav>
+    </header>
+    <h1>Les cavaliers king Charles</h1>
+    
+    <img src="/public/icones/img/dogs/Cavalier king charles.jpg" alt="Photo d'un cavalier king Charles">
+</body>
+</html>
